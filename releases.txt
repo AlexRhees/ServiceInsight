@@ -12,7 +12,7 @@ permalink: /serviceinsight.txt
         "name": "{{ asset.name }}",
         "size": {{ asset.size }},
         "download": "{{ asset.browser_download_url }}"
-      },{% endfor %}
+      }{% if forloop.last}{% else %},{% endif %}{% endfor %}
     ]
-  },{% endfor %}
+  }{% if forloop.last}{% else %},{% endif %}{% endfor %}
 ]
