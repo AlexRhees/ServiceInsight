@@ -1,5 +1,5 @@
 ---
-permalink: /serviceinsight.txt
+permalink: /releases.txt
 ---
 {% assign releases = site.github.releases | where: "prerelease", false %}
 [{% for release in releases %}
