@@ -1,8 +1,8 @@
 ---
 permalink: /serviceinsight.txt
 ---
-
-[{% for release in site.github.releases %}{% if release.prerelease == false %}
+{% assign releases = site.github.releases | where: "prerelease", false %}
+[{% for release in releases %}
   {
     "tag": "{{ release.tag_name }}",
     "release": "{{ release.html_url }}",
@@ -14,5 +14,5 @@ permalink: /serviceinsight.txt
         "download": "{{ asset.browser_download_url }}"
       }{% if forloop.last %}{% else %},{% endif %}{% endfor %}
     ]
-  }{% if forloop.last %}{% else %},{% endif %}{% endif %}{% endfor %}
+  }{% if forloop.last %}{% else %},{% endif %}{% endfor %}
 ]
