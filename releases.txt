@@ -6,7 +6,7 @@ permalink: /releases.txt
   {
     "tag": "{{ release.tag_name }}",
     "release": "{{ release.html_url }}",
-    "published": "{{ release.published_at }}",
+    "published": "{{ release.published_at | date_to_xmlschema }}",
     "assets": [{% for asset in release.assets %}
       {
         "name": "{{ asset.name }}",
