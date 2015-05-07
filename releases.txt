@@ -2,7 +2,7 @@
 permalink: /serviceinsight.txt
 ---
 
-[{% for release in site.github.releases %}{% if release.prerelease == "false" %}
+[{% for release in site.github.releases %}{% if release.prerelease == false %}
   {
     "tag": "{{ release.tag_name }}",
     "release": "{{ release.html_url }}",
